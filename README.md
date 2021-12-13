@@ -17,4 +17,4 @@ verificados quando uma conta sofre “upgrade”. Um cliente só perde sua categ
 perde a categoria “Gold”, e passa para “Silver”, se o saldo cair para menos de R$ 
 25.000,00. Note que um cliente nunca perde duas categorias em uma única operação 
 de retirada mesmo que o saldo caia abaixo de R$ 25.000,00. Se ele era “Platinum”, cai 
-para “Gold”. Só poderá cair para “Silver” na próxima operação de retirada
+para “Gold”. Só poderá cair para “Silver” na próxima operação de retirada.
