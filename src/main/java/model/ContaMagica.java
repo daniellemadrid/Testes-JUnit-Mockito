@@ -42,22 +42,27 @@ public class ContaMagica {
         this.categoria = categoria;
     }
 
-    //
-    public void deposita(BigDecimal valor) {
-        setSaldo(saldo.add(valor));
-        int gold = saldo.compareTo(new BigDecimal("50000"));
-        int platinium = saldo.compareTo(new BigDecimal("200000"));
 
-        if ((gold > 0) || (gold == 0)) {
-            setCategoria(Categoria.GOLD);
-            System.out.println("Cliente Gold");
-            setSaldo(saldo.add(valor.multiply(new BigDecimal("0.01"))));
+    public void deposita(BigDecimal valor) {
+        if (valor.compareTo(new BigDecimal(0)) == 0 || (valor.compareTo(new BigDecimal(0))) < 0) {
+            System.out.println("Não é possível depositar valores negativos ou nulos!");
+        } else {
+            setSaldo(saldo.add(valor));
+            int gold = saldo.compareTo(new BigDecimal("50000"));
+            int platinium = saldo.compareTo(new BigDecimal("200000"));
+
+             if((gold > 0) || (gold == 0)) {
+                setCategoria(Categoria.GOLD);
+                System.out.println("Cliente Gold");
+                setSaldo(saldo.add(valor.multiply(new BigDecimal("0.01"))));
+            }
+             if ((platinium > 0) || (platinium == 0)) {
+                setCategoria(Categoria.PLATINUM);
+                setSaldo(saldo.add(valor.multiply(new BigDecimal("0.025"))));
+                System.out.println("Cliente Platinum");
+            }
         }
-        if ((platinium > 0) || (platinium == 0)) {
-            setCategoria(Categoria.PLATINUM);
-            setSaldo(saldo.add(valor.multiply(new BigDecimal("0.025"))));
-            System.out.println("Cliente Platinum");
-        }
+
     }
 
     public void retirada(BigDecimal valor) {

@@ -84,7 +84,7 @@ public class ContaMagicaTest {
        assertEquals(new BigDecimal("1000"), contaMagica.getSaldo());
     }
     @Test
-    public void naoDeveriaRetirarSaldoQueNãoTem(){
+    public void naoDeveriaRetirarSaldoQueNaoTem(){
         contaMagica.deposita(new BigDecimal(2000));
         contaMagica.retirada(new BigDecimal(3000));
         assertEquals(new BigDecimal(0), contaMagica.getSaldo());
